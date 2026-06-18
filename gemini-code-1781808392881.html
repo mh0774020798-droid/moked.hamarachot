@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מוקד המערכות - דף הבית</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1rem 1.5rem 1rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: var(--text-main);
+            letter-spacing: -0.05em;
+        }
+
+        header p {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .phone-number {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            transition: transform 0.2s;
+        }
+
+        .phone-number:hover {
+            transform: scale(1.02);
+        }
+
+        .email-address {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 1rem;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        .email-address:hover {
+            color: var(--text-main);
+        }
+
+        .stats-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background-color: var(--card-bg);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: translateY 0.2s, box-shadow 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -10px rgba(56, 189, 248, 0.2);
+            border-color: #475569;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-align: center;
+            border-top: 1px solid #1e293b;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>מוקד המערכות</h1>
+        <p>הקו הטלפוני המתקדם שלכם</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="contact-box">
+            <a href="tel:0774020798" class="phone-number">077-4020798</a>
+            <a href="mailto:MH0774020798@GMAIL.COM" class="email-address">MH0774020798@GMAIL.COM</a>
+        </div>
+
+        <h2 class="stats-title">נתוני פעילות המערכת</h2>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">~2,500</div>
+                <div class="stat-label">דקות נכנסות בכל יום</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">130</div>
+                <div class="stat-label">משתמשים מתחילת החודש</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">13,434</div>
+                <div class="stat-label">כניסות מתחילת החודש</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">33,980</div>
+                <div class="stat-label">דקות נכנסות מתחילת החודש</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 מוקד המערכות. כל הזכויות שמורות.
+    </footer>
+
+</body>
+</html>
