@@ -475,5 +475,15 @@
 
         renderMenu(menuData);
     </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+            const splash = document.getElementById('splash-screen');
+            if (splash) {
+                splash.classList.add('fade-out');
+            }
+        }, 5000); // 5000 מילי-שניות = 5 שניות בדיוק
+    });
+</script>
 </body>
 </html>
