@@ -241,10 +241,10 @@
 }
 
 .splash-logo {
-    width: 90% !important;
-    max-width: 750px !important;
+    width: 750px !important;  /* מכריח את התמונה להיפתח בגודל גדול */
+    max-width: 90% !important; /* דואג שבסמארטפונים היא לא תצא מהמסך */
     height: auto !important;
-    animation: none !important; /* מבטל את האפקט שמקטין את התמונה */
+    animation: none !important;
 }
 
 @keyframes pulse {
@@ -284,7 +284,7 @@
 
         <div class="stats-strip">
             <div class="stat-box">
-                <div class="num">~2,500</div>
+                <div class="num">~3,000</div>
                 <div class="txt">דקות נכנסות ביום</div>
             </div>
             <div class="stat-box">
@@ -381,7 +381,7 @@
                     { num: "11", text: "עזר פון", isLeaf: true },
                     { num: "12", text: "תחזית מזג האויר", isLeaf: true },
                     { num: "13", text: "תלונות תחבורה ציבורית", isLeaf: true },
-                    { num: "14", text: "ת\"ת מירפילד", isLeaf: true }
+                    { num: "14", text: "ת\"ת מירפלד", isLeaf: true }
                 ]
             },
             mumlazim: {
