@@ -284,19 +284,19 @@
 
         <div class="stats-strip">
     <div class="stat-box">
-        <div class="num">~<span class="counter" data-target="3000">0</span></div>
+        <div class="num"><span class="prefix">~</span><span class="counter" data-target="3000">0</span></div>
         <div class="txt">דקות נכנסות ביום</div>
     </div>
     <div class="stat-box">
-        <div class="num"><span class="counter" data-target="150">0</span>-כ</div>
+        <div class="num"><span class="prefix">כ-</span><span class="counter" data-target="150">0</span></div>
         <div class="txt">משתמשים פעילים</div>
     </div>
     <div class="stat-box">
-        <div class="num"><span class="counter" data-target="20000">0</span>-כ</div>
+        <div class="num"><span class="prefix">כ-</span><span class="counter" data-target="20000">0</span></div>
         <div class="txt">כניסות בחודש</div>
     </div>
     <div class="stat-box">
-        <div class="num"><span class="counter" data-target="50000">0</span>-כ</div>
+        <div class="num"><span class="prefix">כ-</span><span class="counter" data-target="50000">0</span></div>
         <div class="txt">דקות נכנסות בחודש</div>
     </div>
 </div>
@@ -477,22 +477,21 @@
         }
 
         renderMenu(menuData);
-    </script>
    <script>
     document.addEventListener("DOMContentLoaded", function() {
         
-        // --- 1. קוד מסך הפתיחה (הפרסומת) ---
+        // 1. קוד מסך הפתיחה (הפרסומת) - נעלם אחרי 5 שניות
         setTimeout(function() {
             const splash = document.getElementById('splash-screen');
             if (splash) {
                 splash.style.opacity = '0';
                 splash.style.visibility = 'hidden';
             }
-        }, 5000); // נעלם אחרי 5 שניות
+        }, 5000);
 
-        // --- 2. קוד המספרים הרצים ---
+        // 2. קוד המספרים הרצים
         const counters = document.querySelectorAll('.counter');
-        const speed = 40; // מהירות הריצה
+        const speed = 40; // מהירות הריצה (ככל שנמוך יותר - מהיר יותר)
 
         counters.forEach(counter => {
             const animate = () => {
@@ -503,12 +502,15 @@
 
                 if (current < target) {
                     const newValue = Math.min(current + increment, target);
+                    // מציג את המספר הרץ עם פסיקים
                     counter.innerText = newValue.toLocaleString();
                     setTimeout(animate, 15);
                 } else {
                     counter.innerText = target.toLocaleString();
                 }
             };
+            
+            // הפעלת האנימציה
             animate();
         });
 
