@@ -283,23 +283,23 @@
         </div>
 
         <div class="stats-strip">
-            <div class="stat-box">
-                <div class="num">~3,000</div>
-                <div class="txt">דקות נכנסות ביום</div>
-            </div>
-            <div class="stat-box">
-                <div class="num">כ-150</div>
-                <div class="txt">משתמשים פעילים</div>
-            </div>
-            <div class="stat-box">
-                <div class="num">כ-20,000</div>
-                <div class="txt">כניסות בחודש</div>
-            </div>
-            <div class="stat-box">
-                <div class="num">כ-50,000</div>
-                <div class="txt">דקות נכנסות בחודש</div>
-            </div>
-        </div>
+    <div class="stat-box">
+        <div class="num">~<span class="counter" data-target="3000">0</span></div>
+        <div class="txt">דקות נכנסות ביום</div>
+    </div>
+    <div class="stat-box">
+        <div class="num"><span class="counter" data-target="150">0</span>-כ</div>
+        <div class="txt">משתמשים פעילים</div>
+    </div>
+    <div class="stat-box">
+        <div class="num"><span class="counter" data-target="20000">0</span>-כ</div>
+        <div class="txt">כניסות בחודש</div>
+    </div>
+    <div class="stat-box">
+        <div class="num"><span class="counter" data-target="50000">0</span>-כ</div>
+        <div class="txt">דקות נכנסות בחודש</div>
+    </div>
+</div>
 
         <div class="menu-wrapper">
             <div class="menu-header">
@@ -486,6 +486,35 @@
                 splash.classList.add('fade-out');
             }
         }, 5000); // 5000 מילי-שניות = 5 שניות בדיוק
+    });
+</script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // השהייה קלה של חצי שנייה כדי שהאנימציה תרוץ בזמן שגולש רואה את מסך הפתיחה
+        setTimeout(function() {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 40; // ככל שהמספר נמוך יותר, הריצה מהירה יותר
+
+            counters.forEach(counter => {
+                const animate = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const current = +counter.innerText.replace(/,/g, '');
+
+                    // חישוב הקפיצה בכל שלב של הריצה
+                    const increment = Math.ceil(target / speed);
+
+                    if (current < target) {
+                        const newValue = Math.min(current + increment, target);
+                        // מציג עם פסיק מפריד אלפים (למשל: 20,000)
+                        counter.innerText = newValue.toLocaleString();
+                        setTimeout(animate, 15); // קצב רענון האנימציה
+                    } else {
+                        counter.innerText = target.toLocaleString();
+                    }
+                };
+                animate();
+            });
+        }, 500); 
     });
 </script>
 </body>
