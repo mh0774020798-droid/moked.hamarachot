@@ -478,43 +478,40 @@
 
         renderMenu(menuData);
     </script>
-    <script>
+   <script>
     document.addEventListener("DOMContentLoaded", function() {
+        
+        // --- 1. קוד מסך הפתיחה (הפרסומת) ---
         setTimeout(function() {
             const splash = document.getElementById('splash-screen');
             if (splash) {
-                splash.classList.add('fade-out');
+                splash.style.opacity = '0';
+                splash.style.visibility = 'hidden';
             }
-        }, 5000); // 5000 מילי-שניות = 5 שניות בדיוק
-    });
-</script>
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // השהייה קלה של חצי שנייה כדי שהאנימציה תרוץ בזמן שגולש רואה את מסך הפתיחה
-        setTimeout(function() {
-            const counters = document.querySelectorAll('.counter');
-            const speed = 40; // ככל שהמספר נמוך יותר, הריצה מהירה יותר
+        }, 5000); // נעלם אחרי 5 שניות
 
-            counters.forEach(counter => {
-                const animate = () => {
-                    const target = +counter.getAttribute('data-target');
-                    const current = +counter.innerText.replace(/,/g, '');
+        // --- 2. קוד המספרים הרצים ---
+        const counters = document.querySelectorAll('.counter');
+        const speed = 40; // מהירות הריצה
 
-                    // חישוב הקפיצה בכל שלב של הריצה
-                    const increment = Math.ceil(target / speed);
+        counters.forEach(counter => {
+            const animate = () => {
+                const target = +counter.getAttribute('data-target');
+                const current = +counter.innerText.replace(/,/g, '');
 
-                    if (current < target) {
-                        const newValue = Math.min(current + increment, target);
-                        // מציג עם פסיק מפריד אלפים (למשל: 20,000)
-                        counter.innerText = newValue.toLocaleString();
-                        setTimeout(animate, 15); // קצב רענון האנימציה
-                    } else {
-                        counter.innerText = target.toLocaleString();
-                    }
-                };
-                animate();
-            });
-        }, 500); 
+                const increment = Math.ceil(target / speed);
+
+                if (current < target) {
+                    const newValue = Math.min(current + increment, target);
+                    counter.innerText = newValue.toLocaleString();
+                    setTimeout(animate, 15);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            };
+            animate();
+        });
+
     });
 </script>
 </body>
