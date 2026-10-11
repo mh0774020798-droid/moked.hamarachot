@@ -1,0 +1,8 @@
+--- custom-js-before
++++ custom-js-after
+@@ -71 +71 @@
+-      '<form class="mtfb-key-form"><label for="mtfb-api-key">מפתח API נוסף</label><input id="mtfb-api-key" class="mtfb-key-input" type="password" autocomplete="off" spellcheck="false" placeholder="הדבקת מפתח API" maxlength="256" disabled>' +
++      '<form class="mtfb-key-form"><label for="mtfb-api-key">מפתח API נוסף</label><input id="mtfb-api-key" class="mtfb-key-input" type="password" autocomplete="off" spellcheck="false" placeholder="הדבקת מפתח API" maxlength="4096" disabled>' +
+@@ -305 +305 @@
+-      '<form class="mtfb-key-form"><label for="mtfb-api-key">מפתח API נוסף</label><input id="mtfb-api-key" class="mtfb-key-input" type="password" autocomplete="off" spellcheck="false" placeholder="הדבקת מפתח API" maxlength="256" disabled>' +
++      '<form class="mtfb-key-form"><label for="mtfb-api-key">מפתח API נוסף</label><input id="mtfb-api-key" class="mtfb-key-input" type="password" autocomplete="off" spellcheck="false" placeholder="הדבקת מפתח API" maxlength="4096" disabled>' +
